@@ -5,6 +5,7 @@
 #include "console_ui.h"
 #include <windows.h>  // for SetConsoleTextAttribute
 #include <iomanip>    // for setw
+#include "gate1.h"
 
 extern void clearScreen();
 
@@ -88,39 +89,39 @@ void loadingEffect(string msg = "🌀 Initiating Neural Sync Protocol...") {
 
 
 // Gate display
-void showGateDescriptions() {
-    clearScreen();
-    typeText("\n\n              ⚡ Welcome to the MindMatrix Realm ⚡\n\n", 40);
-    Sleep(400);
+// void showGateDescriptions() {
+//     clearScreen();
+//     typeText("\n\n              ⚡ Welcome to the MindMatrix Realm ⚡\n\n", 40);
+//     Sleep(400);
 
-    typeText("Each Gate tests a dimension of your mind...\n\n", 35);
-    Sleep(400);
+//     typeText("Each Gate tests a dimension of your mind...\n\n", 35);
+//     Sleep(400);
 
-    cout << "═══════════════════════════════════════════════════════════════════\n\n";
+//     cout << "═══════════════════════════════════════════════════════════════════\n\n";
 
-    typeText("🌀  Gate I — The Corridor of Logic\n", 25);
-    typeText("     A realm where code is poetry and logic is survival.\n", 20);
-    typeText("     Every choice echoes through recursion and reasoning.\n\n", 20);
+//     typeText("🌀  Gate I — The Corridor of Logic\n", 25);
+//     typeText("     A realm where code is poetry and logic is survival.\n", 20);
+//     typeText("     Every choice echoes through recursion and reasoning.\n\n", 20);
 
-    typeText("🔥  Gate II — The Chamber of Patterns\n", 25);
-    typeText("     Hidden beneath its rhythm lies the pulse of algorithms.\n", 20);
-    typeText("     Sorting, searching, mapping — the melody of structure.\n\n", 20);
+//     typeText("🔥  Gate II — The Chamber of Patterns\n", 25);
+//     typeText("     Hidden beneath its rhythm lies the pulse of algorithms.\n", 20);
+//     typeText("     Sorting, searching, mapping — the melody of structure.\n\n", 20);
 
-    typeText("🌙  Gate III — The Mirror of Intuition\n", 25);
-    typeText("     It reflects your instincts — can your mind see beyond numbers?\n", 20);
-    typeText("     IQ and common sense entwined in illusions of logic.\n\n", 20);
+//     typeText("🌙  Gate III — The Mirror of Intuition\n", 25);
+//     typeText("     It reflects your instincts — can your mind see beyond numbers?\n", 20);
+//     typeText("     IQ and common sense entwined in illusions of logic.\n\n", 20);
 
-    typeText("⚔️  Gate IV — The Arena of Complexity\n", 25);
-    typeText("     Every move a function, every strike a data flow.\n", 20);
-    typeText("     Conquer time itself — optimize or perish.\n\n", 20);
+//     typeText("⚔️  Gate IV — The Arena of Complexity\n", 25);
+//     typeText("     Every move a function, every strike a data flow.\n", 20);
+//     typeText("     Conquer time itself — optimize or perish.\n\n", 20);
 
-    cout << "═══════════════════════════════════════════════════════════════════\n\n";
+//     cout << "═══════════════════════════════════════════════════════════════════\n\n";
 
-    typeText("🌌  Or, do you wish to retreat...\n", 35);
-    typeText("     Return to Reality without entering the Matrix of your Mind?\n\n", 35);
+//     typeText("🌌  Or, do you wish to retreat...\n", 35);
+//     typeText("     Return to Reality without entering the Matrix of your Mind?\n\n", 35);
 
-    typeText("Choose wisely, wanderer.\n\n", 40);
-}
+//     typeText("Choose wisely, wanderer.\n\n", 40);
+// }
 
 // Menu input
 char gateMenu() {
@@ -131,7 +132,9 @@ char gateMenu() {
         case '1':
             clearScreen();
             typeText("🌀 You step into the Corridor of Logic...\n", 30);
+             runGate1();
             Sleep(800);
+            
             break;
         case '2':
             clearScreen();
@@ -175,7 +178,7 @@ int main() {
 
     loadingEffect(); // dynamic loading bar
 
-    showGateDescriptions();
+    // showGateDescriptions();
     char choice = gateMenu();  // get user input
 
     if (choice >= '1' && choice <= '4') {

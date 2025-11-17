@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "gate1.h"
 using namespace std;
 
 void clearScreen() {
